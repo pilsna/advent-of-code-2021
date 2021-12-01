@@ -1,5 +1,3 @@
-from typing import final
-
 # Day 1 - part 1
 with open('sonar-sweep.txt') as textfile:
     measurements = textfile.readlines()
@@ -16,7 +14,7 @@ with open('sonar-sweep.txt') as textfile:
 with open('sonar-sweep.txt') as textfile:
     measurements = textfile.readlines()
     windows = []
-    for index in range(0, measurements.count - 2):  # remove the last two incomplete windows
+    for index in range(0, len(measurements) - 2):  # remove the last two incomplete windows
         window_sum = int(
             measurements[index]) + int(measurements[index + 1]) + int(measurements[index + 2])
         windows.append(window_sum)
