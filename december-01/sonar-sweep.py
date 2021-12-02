@@ -14,9 +14,8 @@ with open('sonar-sweep.txt') as textfile:
 with open('sonar-sweep.txt') as textfile:
     measurements = textfile.readlines()
     windows = []
-    for index in range(0, len(measurements) - 2):  # remove the last two incomplete windows
-        window_sum = int(
-            measurements[index]) + int(measurements[index + 1]) + int(measurements[index + 2])
+    for index in range(0, len(measurements) - 2): # remove the last two incomplete windows
+        window_sum = int(measurements[index]) + int(measurements[index + 1]) + int(measurements[index + 2])
         windows.append(window_sum)
     previous_window = -1
     count = -1  # adjust for first count with no previous window
