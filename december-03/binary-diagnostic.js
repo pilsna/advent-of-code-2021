@@ -4,8 +4,6 @@ var file = './december-03/binary-diagnostic.txt';
 loadInputFile(file, calculateConsumption)
 
 function verifyLifeSupport(listOfNumbers) {
-    //console.log(listOfNumbers);
-    //console.log(rawCount);
     var oxygenRatingBinary = calculateRating(listOfNumbers, false);
     var oxygenRating = parseBinaryArray(oxygenRatingBinary);
     var co2ScrubberRatingBinary = calculateRating(listOfNumbers, true);
@@ -24,7 +22,7 @@ function calculateRating(listOfNumbers, reverseCount) {
             }
         });
         var bitValue = (count >= filteredList.length / 2) ? 1 : 0;
-        if (reverseCount){
+        if (reverseCount) {
             bitValue = (bitValue == 0) ? 1 : 0;
         }
         filteredList = filteredList.filter(element => {
@@ -35,8 +33,7 @@ function calculateRating(listOfNumbers, reverseCount) {
             return filteredList;
         }
     }
-    return null;
-    
+    return filteredList;
 }
 
 function calculateConsumption(listOfNumbers) {
@@ -90,4 +87,3 @@ function loadInputFile(file, callback) {
         callback(listOfNumbers);
     });
 }
-
